@@ -1,0 +1,88 @@
+[submodule "TRESCLOUD/account-analytic"]
+	path = TRESCLOUD/account-analytic
+	url = git@github.com:TRESCLOUD/account-analytic.git
+	branch = 16.0
+
+[submodule "TRESCLOUD/bank-payment"]
+	path = TRESCLOUD/bank-payment
+	url = git@github.com:TRESCLOUD/bank-payment.git
+	branch = 16.0
+
+[submodule "TRESCLOUD/pos"]
+	path = TRESCLOUD/pos
+	url = git@github.com:TRESCLOUD/pos.git
+	branch = 16.0
+
+[submodule "TRESCLOUD/sale-workflow"]
+	path = TRESCLOUD/sale-workflow
+	url = git@github.com:TRESCLOUD/sale-workflow.git
+	branch = 16.0
+
+[submodule "TRESCLOUD/server-brand"]
+	path = TRESCLOUD/server-brand
+	url = git@github.com:TRESCLOUD/server-brand.git
+	branch = 16.0
+
+[submodule "TRESCLOUD/server-tools"]
+	path = TRESCLOUD/server-tools
+	url = git@github.com:TRESCLOUD/server-tools.git
+	branch = 16.0
+
+[submodule "TRESCLOUD/server-ux"]
+	path = TRESCLOUD/server-ux
+	url = git@github.com:TRESCLOUD/server-ux.git
+	branch = 16.0
+
+[submodule "TRESCLOUD/social"]
+	path = TRESCLOUD/social
+	url = git@github.com:TRESCLOUD/social.git
+	branch = 16.0
+
+[submodule "TRESCLOUD/stock-logistics-warehouse"]
+	path = TRESCLOUD/stock-logistics-warehouse
+	url = git@github.com:TRESCLOUD/stock-logistics-warehouse.git
+	branch = 16.0
+
+[submodule "TRESCLOUD/stock-logistics-workflow"]
+	path = TRESCLOUD/stock-logistics-workflow
+	url = git@github.com:TRESCLOUD/stock-logistics-workflow.git
+	branch = 16.0
+
+[submodule "TRESCLOUD/web"]
+	path = TRESCLOUD/web
+	url = git@github.com:TRESCLOUD/web.git
+	branch = 16.0
+
+[submodule "TRESCLOUD/website"]
+	path = TRESCLOUD/website
+	url = git@github.com:TRESCLOUD/website.git
+	branch = 16.0
+
+[submodule "TRESCLOUD/reporting-engine"]
+	path = TRESCLOUD/reporting-engine
+	url = git@github.com:TRESCLOUD/reporting-engine.git
+	branch = 16.0
+[submodule "TRESCLOUD/account-financial-reporting"]
+	path = TRESCLOUD/account-financial-reporting
+	url = git@github.com:TRESCLOUD/account-financial-reporting.git
+	branch = 16.0
+[submodule "TRESCLOUD/account-financial-tools"]
+	path = TRESCLOUD/account-financial-tools
+	url = git@github.com:TRESCLOUD/account-financial-tools.git
+	branch = 16.0
+[submodule "TRESCLOUD/ecuadorian-hr-16"]
+	path = TRESCLOUD/ecuadorian-hr-16
+	url = git@github.com:TRESCLOUD/trescloud_compiled.git
+	branch = ecuadorian-hr-16
+[submodule "TRESCLOUD/ecuadorian-localization-16"]
+	path = TRESCLOUD/ecuadorian-localization-16
+	url = git@github.com:TRESCLOUD/trescloud_compiled.git
+	branch = ecuadorian-localization-16
+[submodule "TRESCLOUD/odoo-apps-16"]
+	path = TRESCLOUD/odoo-apps-16
+	url = git@github.com:TRESCLOUD/trescloud_compiled.git
+	branch = odoo-apps-16
+[submodule "TRESCLOUD/purchase-and-imports-16"]
+	path = TRESCLOUD/purchase-and-imports-16
+	url = git@github.com:TRESCLOUD/trescloud_compiled.git
+	branch = purchase-and-imports-16
