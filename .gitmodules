@@ -86,3 +86,8 @@
 	path = TRESCLOUD/purchase-and-imports-16
 	url = git@github.com:TRESCLOUD/trescloud_compiled.git
 	branch = purchase-and-imports-16
+
+[submodule "TRESCLOUD/odoo-clientes-especificos"]
+	path = TRESCLOUD/odoo-clientes-especificos
+	url = git@github.com:TRESCLOUD/odoo-clientes-especificos.git
+	branch = 16.0
