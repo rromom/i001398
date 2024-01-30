@@ -16,7 +16,7 @@ class ProjectProject(models.Model):
 
     order_id = fields.Many2one(
         'sale.order',
-        string='Orden de Venta',
+        string='Orden de Venta ',
         help='Numero de la orden de venta relacionado al proyecto',
         compute='_compute_order_id'
     )
