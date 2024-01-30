@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- <data> -->
+        <!-- <record id="project_project_stage_0" inherit="project.project_project_stage_0" primary="True">
+                <xpath expr="//field[@name='name']" position="replace">
+                    <field name="name">Inicio</field>
+                </xpath>
+        </record> -->
+    <!-- </data> -->
+
+    <record id="project_project_stage_start" model="project.project.stage">
+        <field name="sequence">30</field>
+        <field name="name">Inicio</field>
+    </record>
+
+    <record id="project_project_stage_cancel" model="project.project.stage">
+        <field name="sequence">35</field>
+        <field name="name">Cancelado</field>
+        <field name="fold">True</field>
+    </record>
+
+    <record id="project_project_stage_in_progress" model="project.project.stage">
+        <field name="sequence">40</field>
+        <field name="name">En progreso</field>
+    </record>
+
+    <record id="project_project_stage_pending" model="project.project.stage">
+        <field name="sequence">45</field>
+        <field name="name">Pendiente</field>
+    </record>
+
+    <record id="project_project_stage_project_progress" model="project.project.stage">
+        <field name="sequence">50</field>
+        <field name="name">Avance de Proyecto</field>
+        <field name="fold">True</field>
+    </record>
+
+    <record id="project_project_stage_done" model="project.project.stage">
+        <field name="sequence">45</field>
+        <field name="name">Terminado</field>
+        <field name="fold">True</field>
+    </record>
+
+</odoo>
