@@ -13,6 +13,10 @@
         <field name="arch" type="xml">
             <xpath expr="//div[@name='dates']" position="after">
                 <field name="localization" />
+                <field name="customer_approval" widget='radio'/>
+                <field name="project_progress"  invisible='1'/>
+                <field name="sale_order_number"  invisible='1'/>
+                <field name="amount_sale_orders"  invisible='1'/>
             </xpath>
         </field>
     </record>
@@ -34,11 +38,14 @@
                     <field name="is_favorite" nolabel="1" width="1" widget="boolean_favorite"/>
                     <field name="display_name" string="Nombre del Proyecto" class="fw-bold"/>
                     <field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}" optional="show"/>
-                    <field name="sale_line_id" string="N° Pedido"/>
+                    <field name="customer_approval"/>
+                    <!-- <field name="sale_line_id" string="N° Pedido"/> -->
                     <field name="user_id" optional="show" string="Gerente del Proyecto" widget="many2one_avatar_user" options="{'no_open':True, 'no_create': True, 'no_create_edit': True}"/>
                     <field name="date_start" string="Fecha de Inicio" widget="daterange" options="{'related_end_date': 'date'}"/>
                     <field name="date" string="Fecha Final" widget="daterange" options="{'related_start_date': 'date_start'}"/>
-
+                    <field name="amount_sale_orders"/>
+                    <field name="localization"/>
+                    <field name="project_progress" widget="progressbar"/>
                     <field name="privacy_visibility" optional="hide"/>
                     <field name="company_id" optional="show"  groups="base.group_multi_company" options="{'no_create': True, 'no_create': True}"/>
                     <field name="company_id" invisible="1"/>

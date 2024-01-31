@@ -20,8 +20,8 @@
         'sale_timesheet',
     ],
     'data': [
-        'data/project_data.xml',
         'views/project_views.xml',
+        'data/project_data.xml',
         
     ],
     'assets': {
