@@ -13,11 +13,15 @@ class ProjectProject(models.Model):
         for record in self:
             record.project_progress = record.last_update_id.progress
     
-    def _compute_sale_order_number(self):
+    def _compute_amount_sale_order(self):
         for record in self:
-            record.amount_sale_orders = 0
+            record.sale_order_task_id = False   
             if record.task_ids:
-                record.amount_sale_orders = sum(record.task_ids.mapped('sale_order_id').mapped('amount_untaxed'))
+                sales_orders = record.task_ids.mapped('sale_order_id').filtered(lambda order: order.state in ['sale', 'done'] )
+                if sales_orders:
+                    record.amount_sale_orders = sum(sales_orders.mapped('amount_untaxed'))
+                    record.sale_order_task_id = self.env['sale.order'].browse(min(sales_orders.mapped('id')))
+
 
     localization = fields.Char(
         string='Localización',
@@ -37,16 +41,18 @@ class ProjectProject(models.Model):
         help='Ultimo progreso del proyecto'
     )
 
-    sale_order_number = fields.Many2one(
+    sale_order_task_id = fields.Many2one(
         'sale.order',
         string='Numero de orden asociada',
-        compute='_compute_sale_order_number'
+        compute='_compute_amount_sale_order',
+        default=False,
     )
 
     amount_sale_orders = fields.Float(
         string='Monto',
         help='Monto total de las ordenes de venta',
-        compute='_compute_sale_order_number'
+        compute='_compute_amount_sale_order',
+        default=0.0,
     )
 
     

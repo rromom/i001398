@@ -15,7 +15,7 @@
                 <field name="localization" />
                 <field name="customer_approval" widget='radio'/>
                 <field name="project_progress"  invisible='1'/>
-                <field name="sale_order_number"  invisible='1'/>
+                <field name="sale_order_task_id"  invisible='1'/>
                 <field name="amount_sale_orders"  invisible='1'/>
             </xpath>
         </field>
