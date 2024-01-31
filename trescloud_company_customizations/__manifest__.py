@@ -18,6 +18,7 @@
     'depends': [
         'project',
         'sale_timesheet',
+        'sale',
 
         # Se agregan estos módulos para evitar errores en la reestructuración de la vista lista de los proyectos
         'sale_project',
