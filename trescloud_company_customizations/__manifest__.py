@@ -18,6 +18,11 @@
     'depends': [
         'project',
         'sale_timesheet',
+
+        # Se agregan estos módulos para evitar errores en la reestructuración de la vista lista de los proyectos
+        'sale_project',
+        'hr_timesheet',
+
     ],
     'data': [
         'views/project_views.xml',
