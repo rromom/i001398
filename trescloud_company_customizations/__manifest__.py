@@ -27,6 +27,7 @@
     ],
     'data': [
         'views/project_views.xml',
+        'views/sale_order_views.xml',
         'data/project_data.xml',
         
     ],
