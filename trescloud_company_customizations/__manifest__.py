@@ -11,9 +11,9 @@
 
             Autores: Ricardo Romo
     ''',
-    'author': 'Trescloud',
+    'author': 'TRESCLOUD CIA. LTDA.',
     'maintainer': 'TRESCLOUD CIA. LTDA.',
-    'website': 'http://www.trescloud.com',
+    'website': 'https://www.trescloud.com',
     'license': 'OEEL-1',
     'depends': [
         'project',
@@ -30,9 +30,4 @@
         'data/project_data.xml',
         
     ],
-    'assets': {
-        'web.assets_backend': [
-
-        ],
-    },
 }

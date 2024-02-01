@@ -4,19 +4,11 @@ from odoo import _, api, fields, models
 
 class ProjectProject(models.Model):
     _inherit = 'project.project'
-
-    # @api.depends('customer_approval')
-    def _compute_project_progress(self):
-        '''
-        Calcula el progreso de la ultima actualización del proyecto
-        '''
-        for record in self:
-            record.project_progress = record.last_update_id.progress
     
-    def _compute_amount_sale_order(self):
+    def _compute_first_order_and_sum_amount_orders(self):
         '''
-        Calcula la sumatoria de las bases imponibles de todas las ordenes de ventas confirmadas asociadas
-        y la primera orden de venta que se confirmo y que se creo el proyecto
+        Método que calcula la primera orden de venta confirmada y la suma de todas las ordenes de venta asociadas a las tareas  del proyecto 
+        amount_sale_orders: Almacena la suma total de todo el 
         '''
         for record in self:
             record.sale_order_task_id = False 
@@ -25,7 +17,8 @@ class ProjectProject(models.Model):
                 sales_orders = record.task_ids.mapped('sale_order_id').filtered(lambda order: order.state in ['sale', 'done'] )
                 if sales_orders:
                     record.amount_sale_orders = sum(sales_orders.mapped('amount_untaxed'))
-                    record.sale_order_task_id = self.env['sale.order'].browse(min(sales_orders.mapped('id')))
+                    first_sale_order_id = min(sales_orders.mapped('id'))
+                    record.sale_order_task_id = sales_orders.browse(first_sale_order_id)
 
     localization = fields.Char(
         string='Localización',
@@ -40,22 +33,22 @@ class ProjectProject(models.Model):
     )
 
     project_progress = fields.Integer(
-        compute='_compute_project_progress',
-        string='Progreso',
-        help='Ultimo progreso del proyecto'
+        related='last_update_id.progress',
+        string='Progreso del Proyecto',
+        help='Almacena el ultimo avance del proyecto registrado en las actualizaciones del proyecto'
     )
 
     sale_order_task_id = fields.Many2one(
         'sale.order',
         string='Numero de orden asociada',
-        help='Se selecciona la primera orden confirmada',
-        compute='_compute_amount_sale_order',
+        help='Almacena la primera orden de venta confirmada asociada al proyecto',
+        compute='_compute_first_order_and_sum_amount_orders',
     )
 
     amount_sale_orders = fields.Float(
         string='Monto',
         help='Monto total de las ordenes de venta confirmadas',
-        compute='_compute_amount_sale_order',
+        compute='_compute_first_order_and_sum_amount_orders',
     )
 
     

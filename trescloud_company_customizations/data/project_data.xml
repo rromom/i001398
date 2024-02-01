@@ -1,29 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <record id="project.project_project_stage_0" model="project.project.stage">
-        <field name="name">Inicio</field>
-    </record>
+    <data noupdate="1">
+
+        <record id="project.project_project_stage_0" model="project.project.stage">
+            <field name="name">Inicio</field>
+        </record>
     
+        <record id="project.project_project_stage_3" model="project.project.stage">
+            <field name="sequence">14</field>
+            <field name="name">Cancelado</field>
+        </record>
+    
+        <record id="project.project_project_stage_1" model="project.project.stage">
+            <field name="sequence">16</field>
+        </record>
+    
+        <record id="project_project_stage_pending" model="project.project.stage">
+            <field name="sequence">18</field>
+            <field name="name">Pendiente</field>
+        </record>
+    
+        <record id="project_project_stage_project_progress" model="project.project.stage">
+            <field name="sequence">19</field>
+            <field name="name">Avance de Proyecto</field>
+            <field name="fold">True</field>
+        </record>
 
-    <record id="project.project_project_stage_3" model="project.project.stage">
-        <field name="sequence">14</field>
-        <field name="name">Cancelado</field>
-    </record>
+    </data>
 
-    <record id="project.project_project_stage_1" model="project.project.stage">
-        <field name="sequence">16</field>
-    </record>
-
-    <record id="project_project_stage_pending" model="project.project.stage">
-        <field name="sequence">18</field>
-        <field name="name">Pendiente</field>
-    </record>
-
-    <record id="project_project_stage_project_progress" model="project.project.stage">
-        <field name="sequence">19</field>
-        <field name="name">Avance de Proyecto</field>
-        <field name="fold">True</field>
-    </record>
 
 </odoo>
