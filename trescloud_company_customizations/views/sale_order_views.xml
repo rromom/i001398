@@ -7,8 +7,7 @@
         <field name="model">sale.order</field>
         <field name="inherit_id" ref="sale.view_order_form"/>
         <field name="arch" type="xml">
-            <xpath expr="//group[@name='sale_info']//field[@name='analytic_account_id']" position="attributes">
-                <attribute name="attrs"> {'invisible': 1} </attribute>
+            <xpath expr="//group[@name='sale_info']//field[@name='analytic_account_id']" position="replace">
             </xpath>
             <xpath expr="//group[@name='sale_header']//group[@name='order_details']" position="inside">
                 <field name="analytic_account_id" context="{'default_partner_id':partner_invoice_id, 'default_name':name}" attrs="{'readonly': ['|',('invoice_count','!=',0),('state','=','sale')]}" groups="analytic.group_analytic_accounting" force_save="1"/>

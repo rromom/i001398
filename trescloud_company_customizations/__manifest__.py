@@ -4,7 +4,7 @@
 {
     'name': 'Trescloud Company Customizations',
     'version': '1.0',
-    'category': '/',
+    'category': 'Project',
     'summary': 'Customizations',
     'description': '''
         Módulo de Personalizaciones especificadas por el cliente.

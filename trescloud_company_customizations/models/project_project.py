@@ -17,8 +17,7 @@ class ProjectProject(models.Model):
                 sales_orders = record.task_ids.mapped('sale_order_id').filtered(lambda order: order.state in ['sale', 'done'] )
                 if sales_orders:
                     record.amount_sale_orders = sum(sales_orders.mapped('amount_untaxed'))
-                    first_sale_order_id = min(sales_orders.mapped('id'))
-                    record.sale_order_task_id = sales_orders.browse(first_sale_order_id)
+                    record.sale_order_task_id = sales_orders.sorted(key=lambda sale_order: sale_order.id)[0]
 
     localization = fields.Char(
         string='Localización',
